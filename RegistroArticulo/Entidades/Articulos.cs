@@ -12,7 +12,7 @@ namespace RegistroArticulo.Entidades
         [Key]
         public int ArticuloId  { get; set; }
         public string Descripcion { get; set; }
-        public string precio { get; set; }
+        public string Precio { get; set; }
         public int CantidadCotizada { get; set; }
         public DateTime FechaVencimiento { get; set; }
 
@@ -21,7 +21,7 @@ namespace RegistroArticulo.Entidades
 
             ArticuloId = 0;
             Descripcion = string.Empty;
-            precio = string.Empty;
+            Precio = string.Empty;
             CantidadCotizada = 0;
             FechaVencimiento = DateTime.Now;
 
