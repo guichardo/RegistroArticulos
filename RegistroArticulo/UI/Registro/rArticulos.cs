@@ -26,7 +26,7 @@ namespace RegistroArticulo.UI.Registro
             art.ArticuloId = Convert.ToInt32(IdnumericUpDown.Value);
             art.Descripcion = DescripciontextBox.Text;
             art.Precio = PreciotextBox.Text;
-            art.FechaVencimiento = VencimientodateTimePicker.MaxDate;
+            art.FechaVencimiento = VencimientodateTimePicker.Value;
             art.CantidadCotizada = Convert.ToInt32(CantCottextBox.Text);
 
             return art;
@@ -60,11 +60,13 @@ namespace RegistroArticulo.UI.Registro
             Articulos articulo = LlenarClase();
             bool paso = false;
 
+            //Determinar si es Guardar o Modificar
             if (IdnumericUpDown.Value == 0)
                 paso = BLL.ArticulosBLL.Guardar(articulo);
             else
                 paso = BLL.ArticulosBLL.Modificar(LlenarClase());
 
+            //Informar el resultado
             if (paso)
 
                 MessageBox.Show("Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -78,6 +80,7 @@ namespace RegistroArticulo.UI.Registro
             DescripciontextBox.Clear();
             PreciotextBox.Clear();
             CantCottextBox.Clear();
+            
         }
 
         private void Eliminarbutton_Click_1(object sender, EventArgs e)

@@ -5,10 +5,10 @@ GO
 
 CREATE TABLE Articulos
 (
-	ID int primary key identity(1, 1),
+	ArticuloID int primary key identity(1, 1),
 	FechaVencimiento datetime,
 	Descripcion varchar(max),
-	precio int,
+	precio varchar(max),
 	CantidadCotizada int	
 
 );

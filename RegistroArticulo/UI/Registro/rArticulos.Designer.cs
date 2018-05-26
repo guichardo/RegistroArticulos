@@ -125,6 +125,7 @@
             // 
             this.VencimientodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.VencimientodateTimePicker.Location = new System.Drawing.Point(131, 161);
+            this.VencimientodateTimePicker.MinDate = new System.DateTime(2018, 5, 26, 0, 0, 0, 0);
             this.VencimientodateTimePicker.Name = "VencimientodateTimePicker";
             this.VencimientodateTimePicker.Size = new System.Drawing.Size(189, 20);
             this.VencimientodateTimePicker.TabIndex = 9;

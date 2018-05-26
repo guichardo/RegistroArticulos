@@ -20,9 +20,12 @@ namespace RegistroArticulo.UI.Consulta
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
+            //Inicializando el filtro en True
             System.Linq.Expressions.Expression<Func<Articulos, bool>> filtro = x => true;
 
             int id;
+            int cant;
+            DateTime fecha;
             switch (filtrarcomboBox.SelectedIndex)
             {
                 case 0://ID
@@ -36,10 +39,12 @@ namespace RegistroArticulo.UI.Consulta
                     filtro = x => x.Precio.Contains(CriteriotextBox.Text);
                     break;
                 case 3://Fecha de vencimiento
-                    filtro = x => x.FechaVencimiento.Equals(CriteriotextBox.Text);
+                    fecha = Convert.ToDateTime(CriteriotextBox.Text);
+                    filtro = x => x.FechaVencimiento == fecha;
                     break;
                 case 4:// Cantidad amortizada
-                    filtro = x => x.CantidadCotizada.Equals(CriteriotextBox.Text);
+                    cant = Convert.ToInt32(CriteriotextBox.Text);
+                    filtro = x => x.CantidadCotizada == cant;
                     break;
             }
 

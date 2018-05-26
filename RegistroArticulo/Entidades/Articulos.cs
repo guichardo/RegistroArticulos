@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace RegistroArticulo.Entidades
 {
+    //Debe ser PUBLIC para que sea visible para las demas capas
     public class Articulos
     {
-        [Key]
+        [Key] //hay que importar System.ComponentModel.DataAnnotations;
         public int ArticuloId  { get; set; }
         public string Descripcion { get; set; }
         public string Precio { get; set; }
@@ -23,7 +24,7 @@ namespace RegistroArticulo.Entidades
             Descripcion = string.Empty;
             Precio = string.Empty;
             CantidadCotizada = 0;
-            FechaVencimiento = DateTime.Now;
+            FechaVencimiento = DateTime.Now; //inicializamos con la fecha actual.
 
         }
     }
